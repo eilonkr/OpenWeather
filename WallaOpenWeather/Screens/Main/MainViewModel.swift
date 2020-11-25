@@ -30,7 +30,7 @@ class MainViewModel: NSObject, ViewControllerModel {
     
     public lazy var collectionViewLayout: Binding<(ViewStyle, UICollectionViewFlowLayout)> = .init((viewStyle, generateCollectionViewLayout()))
         
-    /// Just for convenience :) Bridges over the dataSource.data.value binding.
+    /// Just for convenience :) Bridges over the `dataSource.data.value` binding.
     private var weatherItems: [WeatherItem]? {
         get {
             dataSource?.data.value
@@ -40,7 +40,7 @@ class MainViewModel: NSObject, ViewControllerModel {
     }
     
     private var cellId: String { viewStyle == .list ? "ListCell" : "GridCell" }
-    
+        
     // MARK: - Initializer
     
     init(cachedWeatherItems: [WeatherItem]?, viewStyle: ViewStyle) {
@@ -59,7 +59,7 @@ class MainViewModel: NSObject, ViewControllerModel {
 extension MainViewModel: MainDelegate {
     func fetchWeatherData(forCities cities: [String]) {
         viewContollerDelegate?.toggleLoadingInterface(true)
-        NetworkManager.getCurrentWeatherData(forCities: cities) { [weak self] result in
+        WeatherNetworkManager.shared.getCurrentWeatherData(forCities: cities) { [weak self] result in
             self?.viewContollerDelegate?.toggleLoadingInterface(false)
             switch result {
                 case .success(let weatherItems):

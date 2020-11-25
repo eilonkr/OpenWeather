@@ -28,7 +28,7 @@ class CityViewModel: ViewControllerModel {
 extension CityViewModel: CityDelegate {
     func fetchForecast() {
         viewContollerDelegate?.toggleLoadingInterface(true)
-        NetworkManager.getFiveDayForecast(forCity: currentWeather.cityName!) { [weak self] result in
+        WeatherNetworkManager.shared.getFiveDayForecast(forCity: currentWeather.cityName!) { [weak self] result in
             guard let self = self else { return }
             self.viewContollerDelegate?.toggleLoadingInterface(false)
             switch result {

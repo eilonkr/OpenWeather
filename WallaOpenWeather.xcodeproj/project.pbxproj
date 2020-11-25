@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,15 +21,14 @@
 		950331D925652D260073665F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950331D825652D260073665F /* MainViewController.swift */; };
 		950331DD25652D3A0073665F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950331DC25652D3A0073665F /* MainViewModel.swift */; };
 		950331E025652D430073665F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950331DF25652D430073665F /* MainCoordinator.swift */; };
+		9535C889256EB4F100C035F0 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535C888256EB4F100C035F0 /* WeatherService.swift */; };
 		9540D0572566750700D976EF /* Archiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540D0562566750700D976EF /* Archiver.swift */; };
-		9540D05D256676A800D976EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540D05C256676A800D976EF /* NetworkManager.swift */; };
-		9540D061256676C300D976EF /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540D060256676C300D976EF /* HTTPRequest.swift */; };
+		9540D05D256676A800D976EF /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540D05C256676A800D976EF /* WeatherNetworkManager.swift */; };
 		9540D0652566819700D976EF /* WeatherItemDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540D0642566819700D976EF /* WeatherItemDecodable.swift */; };
 		9540D06A2566824200D976EF /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540D0692566824200D976EF /* WeatherItem.swift */; };
 		955839E42566A8BE00D9FE21 /* CurrentWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955839E32566A8BE00D9FE21 /* CurrentWeatherCell.swift */; };
 		955839E82566B0FB00D9FE21 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955839E72566B0FB00D9FE21 /* Misc.swift */; };
 		956EDB95256595D80061DEB9 /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EDB94256595D80061DEB9 /* ViewControllerModel.swift */; };
-		957B651D256A658B00356E2C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957B651C256A658B00356E2C /* LocationManager.swift */; };
 		95949E35256671D70028F7D2 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95949E34256671D70028F7D2 /* UILabel+Extensions.swift */; };
 		95949E38256671EC0028F7D2 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95949E37256671EC0028F7D2 /* UIView+AutoLayout.swift */; };
 		95949E3B256672010028F7D2 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95949E3A256672010028F7D2 /* CALayer+Extensions.swift */; };
@@ -42,9 +41,12 @@
 		95DB36372567D283007D48FD /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB36362567D283007D48FD /* NavigationDelegate.swift */; };
 		95EB5EFE2569B1BD00A5B419 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5EFD2569B1BD00A5B419 /* CollectionViewDataSource.swift */; };
 		95EB5F012569B29D00A5B419 /* Providable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5F002569B29D00A5B419 /* Providable.swift */; };
+		F1883F23FEF9F05DEB16B297 /* Pods_WallaOpenWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2902DB4DF9DF83722481DF6 /* Pods_WallaOpenWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		780B6B40AAB8560E69E83E64 /* Pods-WallaOpenWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallaOpenWeather.release.xcconfig"; path = "Target Support Files/Pods-WallaOpenWeather/Pods-WallaOpenWeather.release.xcconfig"; sourceTree = "<group>"; };
+		88539BC4229DEFCEE506A2EF /* Pods-WallaOpenWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallaOpenWeather.debug.xcconfig"; path = "Target Support Files/Pods-WallaOpenWeather/Pods-WallaOpenWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		950331A825652BB60073665F /* WallaOpenWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallaOpenWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		950331AB25652BB60073665F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		950331AD25652BB60073665F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,15 +63,14 @@
 		950331D825652D260073665F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		950331DC25652D3A0073665F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		950331DF25652D430073665F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9535C888256EB4F100C035F0 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		9540D0562566750700D976EF /* Archiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archiver.swift; sourceTree = "<group>"; };
-		9540D05C256676A800D976EF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		9540D060256676C300D976EF /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		9540D05C256676A800D976EF /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		9540D0642566819700D976EF /* WeatherItemDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemDecodable.swift; sourceTree = "<group>"; };
 		9540D0692566824200D976EF /* WeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
 		955839E32566A8BE00D9FE21 /* CurrentWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCell.swift; sourceTree = "<group>"; };
 		955839E72566B0FB00D9FE21 /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		956EDB94256595D80061DEB9 /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
-		957B651C256A658B00356E2C /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		95949E34256671D70028F7D2 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		95949E37256671EC0028F7D2 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		95949E3A256672010028F7D2 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		95DB36362567D283007D48FD /* NavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 		95EB5EFD2569B1BD00A5B419 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		95EB5F002569B29D00A5B419 /* Providable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providable.swift; sourceTree = "<group>"; };
+		F2902DB4DF9DF83722481DF6 /* Pods_WallaOpenWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallaOpenWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,17 +91,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1883F23FEF9F05DEB16B297 /* Pods_WallaOpenWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02939FE532D3CED5F9E553D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2902DB4DF9DF83722481DF6 /* Pods_WallaOpenWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26B216DE393471765D5B8DA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88539BC4229DEFCEE506A2EF /* Pods-WallaOpenWeather.debug.xcconfig */,
+				780B6B40AAB8560E69E83E64 /* Pods-WallaOpenWeather.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9503319F25652BB60073665F = {
 			isa = PBXGroup;
 			children = (
 				950331AA25652BB60073665F /* WallaOpenWeather */,
 				950331A925652BB60073665F /* Products */,
+				26B216DE393471765D5B8DA6 /* Pods */,
+				02939FE532D3CED5F9E553D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,7 +188,6 @@
 		950331D225652C4B0073665F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9540D060256676C300D976EF /* HTTPRequest.swift */,
 				9540D0562566750700D976EF /* Archiver.swift */,
 				95949E65256673A20028F7D2 /* Defaults.swift */,
 				950331D325652C530073665F /* Environment.swift */,
@@ -192,11 +213,19 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		9535C887256EB4DB00C035F0 /* NetworkingTypes */ = {
+			isa = PBXGroup;
+			children = (
+				9535C888256EB4F100C035F0 /* WeatherService.swift */,
+			);
+			path = NetworkingTypes;
+			sourceTree = "<group>";
+		};
 		9540D05B2566769B00D976EF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				9540D05C256676A800D976EF /* NetworkManager.swift */,
-				957B651C256A658B00356E2C /* LocationManager.swift */,
+				9540D05C256676A800D976EF /* WeatherNetworkManager.swift */,
+				9535C887256EB4DB00C035F0 /* NetworkingTypes */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -281,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 950331BC25652BB70073665F /* Build configuration list for PBXNativeTarget "WallaOpenWeather" */;
 			buildPhases = (
+				7ECF1986906E2131CD6AE28C /* [CP] Check Pods Manifest.lock */,
 				950331A425652BB60073665F /* Sources */,
 				950331A525652BB60073665F /* Frameworks */,
 				950331A625652BB60073665F /* Resources */,
+				B3215EAD5C08BAAE56F2C904 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,16 +370,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7ECF1986906E2131CD6AE28C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WallaOpenWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3215EAD5C08BAAE56F2C904 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WallaOpenWeather/Pods-WallaOpenWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WallaOpenWeather/Pods-WallaOpenWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WallaOpenWeather/Pods-WallaOpenWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		950331A425652BB60073665F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9540D061256676C300D976EF /* HTTPRequest.swift in Sources */,
-				9540D05D256676A800D976EF /* NetworkManager.swift in Sources */,
+				9540D05D256676A800D976EF /* WeatherNetworkManager.swift in Sources */,
 				950331D025652C3D0073665F /* Coordinator+Coordinated.swift in Sources */,
 				95949E66256673A20028F7D2 /* Defaults.swift in Sources */,
-				957B651D256A658B00356E2C /* LocationManager.swift in Sources */,
 				95DB362E2567CFC3007D48FD /* CityCoordinator.swift in Sources */,
 				9540D0652566819700D976EF /* WeatherItemDecodable.swift in Sources */,
 				950331D425652C530073665F /* Environment.swift in Sources */,
@@ -360,6 +431,7 @@
 				950331C825652C200073665F /* BaseController.swift in Sources */,
 				95DB362A2567CFAF007D48FD /* CityViewController.swift in Sources */,
 				9540D0572566750700D976EF /* Archiver.swift in Sources */,
+				9535C889256EB4F100C035F0 /* WeatherService.swift in Sources */,
 				950331E025652D430073665F /* MainCoordinator.swift in Sources */,
 				955839E82566B0FB00D9FE21 /* Misc.swift in Sources */,
 				950331DD25652D3A0073665F /* MainViewModel.swift in Sources */,
@@ -519,6 +591,7 @@
 		};
 		950331BD25652BB70073665F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88539BC4229DEFCEE506A2EF /* Pods-WallaOpenWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -538,6 +611,7 @@
 		};
 		950331BE25652BB70073665F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 780B6B40AAB8560E69E83E64 /* Pods-WallaOpenWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
