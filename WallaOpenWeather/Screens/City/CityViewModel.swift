@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityViewModel: ViewControllerModel {
+final class CityViewModel: ViewControllerModel {
     var navigationTitle: String
     weak var viewContollerDelegate: ViewControllerModelDelegate?
     

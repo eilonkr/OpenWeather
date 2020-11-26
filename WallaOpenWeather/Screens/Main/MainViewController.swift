@@ -7,8 +7,7 @@
 
 import UIKit
 
-
-class MainViewController: BaseController<MainCoordinator, MainViewModel> {
+final class MainViewController: BaseController<MainCoordinator, MainViewModel> {
     
     // MARK: - Outlets
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Container: UIView {
+final class Container: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()

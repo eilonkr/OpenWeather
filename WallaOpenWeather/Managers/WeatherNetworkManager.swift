@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-class WeatherNetworkManager {
+final class WeatherNetworkManager {
     /// A notorious Singleton.
     static let shared = WeatherNetworkManager()
     

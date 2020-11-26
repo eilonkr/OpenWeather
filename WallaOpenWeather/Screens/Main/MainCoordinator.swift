@@ -13,7 +13,7 @@ protocol MainDelegate: AnyObject {
     func didUpdate(_ date: Date?)
 }
 
-class MainCoordinator: Coordinator {
+final class MainCoordinator: Coordinator {
     enum ViewStyle {
         case list, grid
         var icon: UIImage? {

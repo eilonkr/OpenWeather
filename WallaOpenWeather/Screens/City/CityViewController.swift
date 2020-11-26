@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityViewController: BaseController<CityCoordinator, CityViewModel> {
+final class CityViewController: BaseController<CityCoordinator, CityViewModel> {
 
     @IBOutlet weak var currentWeatherIconView: UIImageView!
     @IBOutlet weak var currentCityLabel: UILabel!

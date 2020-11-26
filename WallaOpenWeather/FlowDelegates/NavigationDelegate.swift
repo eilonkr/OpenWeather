@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationDelegate: NSObject, UINavigationControllerDelegate {
+final class NavigationDelegate: NSObject, UINavigationControllerDelegate {
     typealias Handler = (Coordinator?) -> Void
     
     let didFinish: Handler

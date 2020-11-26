@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewModel: NSObject, ViewControllerModel {
+final class MainViewModel: NSObject, ViewControllerModel {
     typealias ViewStyle = MainCoordinator.ViewStyle
     
     // MARK: - ViewModelController Properties

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MasterNavigationController: UINavigationController {
+final class MasterNavigationController: UINavigationController {
     
     private weak var loadingLayer: LoadingLayer?
     

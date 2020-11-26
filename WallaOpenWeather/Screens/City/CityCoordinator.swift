@@ -11,7 +11,7 @@ protocol CityDelegate: AnyObject {
     func fetchForecast()
 }
 
-class CityCoordinator: Coordinator {
+final class CityCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var children = [Coordinator]()

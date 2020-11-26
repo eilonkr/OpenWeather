@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DayCell: UICollectionViewCell, Providable {
+final class DayCell: UICollectionViewCell, Providable {
     
     typealias ProvidedItem = WeatherItem
     

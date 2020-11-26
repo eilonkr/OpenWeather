@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewDataSource<CellType: UICollectionViewCell & Providable>: NSObject, UICollectionViewDataSource {
+final class CollectionViewDataSource<CellType: UICollectionViewCell & Providable>: NSObject, UICollectionViewDataSource {
     
     typealias T = CellType.ProvidedItem
     
