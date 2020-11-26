@@ -7,6 +7,6 @@ target 'WallaOpenWeather' do
 
   # Pods for WallaOpenWeather
 
-pod 'Moya'
+  pod 'Moya'
 
 end
