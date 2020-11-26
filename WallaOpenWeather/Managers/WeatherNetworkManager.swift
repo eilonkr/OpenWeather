@@ -67,16 +67,7 @@ extension WeatherNetworkManager {
                 case .success(let response):
                     do {
                         let items = try response.decode(ForecastItem.self).list
-                        var filteredItems = [WeatherItemDecodable]()
-                        // Selectively query for 5 days
-                        for i in 0 ..< items.count {
-                            if i % 8 == 0 {
-                                if let item = items[safe: i] {
-                                    filteredItems.append(item)
-                                }
-                            }
-                        }
-                        
+                        let filteredItems = Self.queryFiveDays(from: items)
                         handler(.success(filteredItems.map(\.currentWeather)))
                     } catch {
                         handler(.failure(error))
@@ -85,6 +76,20 @@ extension WeatherNetworkManager {
                     handler(.failure(error))
             }
         }
+    }
+    
+    static private func queryFiveDays(from items: [WeatherItemDecodable]) -> [WeatherItemDecodable] {
+        var filteredItems = [WeatherItemDecodable]()
+        // Selectively query for 5 days
+        for i in 0 ..< items.count {
+            if i % 8 == 0 {
+                if let item = items[safe: i] {
+                    filteredItems.append(item)
+                }
+            }
+        }
+        
+        return filteredItems
     }
 }
 
