@@ -7,28 +7,31 @@
 
 import Foundation
 
+@propertyWrapper
+struct UserDefault<Value> {
+    let key: String
+    let defaultValue: Value
+    var container: UserDefaults = .standard
+
+    var wrappedValue: Value {
+        get {
+            return container.object(forKey: key) as? Value ?? defaultValue
+        } set {
+            container.set(newValue, forKey: key)
+        }
+    }
+}
+
+
 struct Defaults {
-    private static let defaults = UserDefaults.standard
-    
-    private struct Keys {
-        static let prefersGrid = "prefersGrid"
-        static let lastUpdated = "lastUpdated"
+    enum Keys: String {
+        case prefersGrid
+        case lastUpdated
     }
     
-    static var prefersGridUI: Bool {
-        get {
-            defaults.bool(forKey: Keys.prefersGrid)
-        } set {
-            defaults.set(newValue, forKey: Keys.prefersGrid)
-        }
-    }
+    @UserDefault(key: Keys.prefersGrid.rawValue, defaultValue: false)
+    static var prefersGridUI: Bool
     
-    /// Represented in UNIX time (since 1970)
-    static var lastUpdatedAt: TimeInterval {
-        get {
-            defaults.double(forKey: Keys.lastUpdated)
-        } set {
-            defaults.set(newValue, forKey: Keys.lastUpdated)
-        }
-    }
+    @UserDefault(key: Keys.lastUpdated.rawValue, defaultValue: 0)
+    static var lastUpdatedAt: TimeInterval
 }
